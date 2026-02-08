@@ -10,27 +10,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (menuToggle && mobileMenu && navbar) {
         menuToggle.addEventListener('click', function () {
-            // Check if menu is closed (has max-h-0)
-            const isClosed = mobileMenu.classList.contains('max-h-0');
+            // Check if menu is closed (based on computed style or inline style)
+            // We rely on the presence of inline max-height to determine if it's open, 
+            // or we can toggle a state. The max-h-0 class is default.
 
-            if (isClosed) {
+            // Simpler: Check if max-height is set
+            const isOpen = mobileMenu.style.maxHeight === '24rem';
+
+            if (!isOpen) {
                 // Open menu
                 mobileMenu.classList.remove('max-h-0', 'opacity-0');
-                mobileMenu.classList.add('max-h-96', 'opacity-100');
+                // Use scrollHeight for auto-adjusting height
+                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+                mobileMenu.style.opacity = '1';
 
-                // Adjust navbar shape to be less rounded when open to fit content
+                // Adjust navbar shape
                 navbar.classList.remove('rounded-full');
-                navbar.classList.add('rounded-2xl');
+                // Use inline style
+                navbar.style.borderRadius = '1rem'; // rounded-2xl is 1rem
 
                 // Change icon to close (X)
                 menuToggle.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>';
             } else {
                 // Close menu
-                mobileMenu.classList.remove('max-h-96', 'opacity-100');
+                // Return to class-based defaults
+                mobileMenu.style.maxHeight = null;
+                mobileMenu.style.opacity = null;
                 mobileMenu.classList.add('max-h-0', 'opacity-0');
 
                 // Restore pill shape
-                navbar.classList.remove('rounded-2xl');
+                navbar.style.borderRadius = null;
                 navbar.classList.add('rounded-full');
 
                 // Change icon back to hamburger

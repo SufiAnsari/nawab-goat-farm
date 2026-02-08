@@ -24,20 +24,20 @@
 <body class="font-body bg-white text-gray-800">
     <!-- Navigation (Mini Navbar) -->
     <nav id="navbar"
-        class="fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ease-in-out border border-white/20 bg-white/90 backdrop-blur-md shadow-lg rounded-full w-[calc(100%-1.5rem)] md:w-auto max-w-5xl">
-        <div class="px-4 md:px-6 py-3">
-            <div class="flex items-center justify-between gap-x-2 md:gap-x-8">
+        class="fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ease-in-out border border-white/20 bg-white/90 backdrop-blur-md shadow-lg rounded-full w-[calc(100%-1.5rem)] lg:w-auto max-w-5xl">
+        <div class="px-4 lg:px-6 py-3">
+            <div class="flex items-center justify-between gap-x-2 lg:gap-x-8">
                 <!-- Logo -->
-                <a href="../index.html" class="flex items-center gap-2 md:gap-3 shrink-0">
+                <a href="../index.html" class="flex items-center gap-2 lg:gap-3 shrink-0">
                     <img src="../images/logo.webp" alt="NAWAB GOAT FARM"
-                        class="h-8 w-8 md:h-10 md:w-10 rounded-full object-cover">
+                        class="h-8 w-8 lg:h-10 lg:w-10 rounded-full object-cover">
                     <span
                         class="block font-heading font-bold text-brand-dark text-xs sm:text-base whitespace-nowrap">NAWAB
                         GOAT FARM</span>
                 </a>
 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-1 bg-gray-100/50 rounded-full px-2 py-1">
+                <div class="hidden lg:flex items-center space-x-1 bg-gray-100/50 rounded-full px-2 py-1">
                     <a href="../index.html"
                         class="nav-link px-4 py-1.5 text-sm rounded-full transition-colors hover:text-brand-dark">Home</a>
                     <a href="about.html"
@@ -49,14 +49,14 @@
                 </div>
 
                 <!-- CTA & Mobile Toggle -->
-                <div class="flex items-center gap-2 md:gap-3">
+                <div class="flex items-center gap-2 lg:gap-3">
                     <a href="contact.html"
-                        class="hidden md:inline-flex px-4 py-2 text-xs sm:text-sm font-semibold text-white bg-brand-green rounded-full hover:bg-brand-dark transition-colors whitespace-nowrap">
+                        class="hidden lg:inline-flex px-4 py-2 text-xs sm:text-sm font-semibold text-white bg-brand-green rounded-full hover:bg-brand-dark transition-colors whitespace-nowrap">
                         Contact Us
                     </a>
 
                     <button id="menu-toggle"
-                        class="md:hidden p-1.5 text-gray-600 hover:text-brand-dark transition-colors"
+                        class="lg:hidden p-1.5 text-gray-600 hover:text-brand-dark transition-colors"
                         aria-label="Toggle Menu">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -67,7 +67,7 @@
             </div>
 
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="md:hidden overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0">
+            <div id="mobile-menu" class="lg:hidden overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0">
                 <div class="pt-4 pb-2 space-y-2 flex flex-col items-center">
                     <a href="../index.html"
                         class="w-full text-center py-2 text-gray-600 hover:text-brand-dark font-medium transition-colors">Home</a>
@@ -78,7 +78,7 @@
                     <a href="gallery.html"
                         class="w-full text-center py-2 text-gray-600 hover:text-brand-dark font-medium transition-colors">Gallery</a>
                     <a href="contact.html"
-                        class="w-full text-center py-2 text-brand-green font-bold transition-colors">Contact Us</a>
+                        class="w-full text-center py-2 text-white bg-brand-green font-bold rounded-full transition-colors hover:bg-brand-dark mx-auto block max-w-[200px]">Contact Us</a>
                 </div>
             </div>
         </div>
