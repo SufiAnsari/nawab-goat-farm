@@ -90,34 +90,57 @@ document.addEventListener('DOMContentLoaded', function () {
         lazyImages.forEach(img => imageObserver.observe(img));
     }
 
-    // Form validation
+    // Form validation and WhatsApp Redirection
     const contactForms = document.querySelectorAll('form[data-netlify="true"]');
 
     contactForms.forEach(form => {
         form.addEventListener('submit', function (e) {
-            const name = this.querySelector('input[name="name"]');
-            const message = this.querySelector('textarea[name="message"]');
+            e.preventDefault(); // Prevent default Netlify submission to open WhatsApp
+
+            const nameInput = this.querySelector('input[name="name"]');
+            const phoneInput = this.querySelector('input[name="phone"]'); // Might be null in contact.html? No, it has phone input.
+            const emailInput = this.querySelector('input[name="email"]');
+            const serviceInput = this.querySelector('select[name="service"]');
+            const messageInput = this.querySelector('textarea[name="message"]');
 
             let isValid = true;
 
-            if (name && name.value.trim() === '') {
+            if (nameInput && nameInput.value.trim() === '') {
                 isValid = false;
-                name.classList.add('border-red-500');
-            } else if (name) {
-                name.classList.remove('border-red-500');
+                nameInput.classList.add('border-red-500');
+            } else if (nameInput) {
+                nameInput.classList.remove('border-red-500');
             }
 
-            if (message && message.value.trim() === '') {
+            if (messageInput && messageInput.value.trim() === '') {
                 isValid = false;
-                message.classList.add('border-red-500');
-            } else if (message) {
-                message.classList.remove('border-red-500');
+                messageInput.classList.add('border-red-500');
+            } else if (messageInput) {
+                messageInput.classList.remove('border-red-500');
             }
 
             if (!isValid) {
-                e.preventDefault();
                 alert('Please fill in all required fields.');
+                return;
             }
+
+            // Construct WhatsApp Message
+            let text = `*New Inquiry from Website*\n\n`;
+            text += `*Name:* ${nameInput.value}\n`;
+            if (phoneInput && phoneInput.value) text += `*Phone:* ${phoneInput.value}\n`;
+            if (emailInput && emailInput.value) text += `*Email:* ${emailInput.value}\n`;
+            if (serviceInput && serviceInput.value) text += `*Service Interest:* ${serviceInput.options[serviceInput.selectedIndex].text}\n`;
+            text += `*Message:* ${messageInput.value}`;
+
+            // Encode for URL
+            const encodedText = encodeURIComponent(text);
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=919860487836&text=${encodedText}`;
+
+            // Open in new tab
+            window.open(whatsappUrl, '_blank');
+
+            // Optional: Reset form
+            form.reset();
         });
     });
 
