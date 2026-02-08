@@ -10,18 +10,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (menuToggle && mobileMenu && navbar) {
         menuToggle.addEventListener('click', function () {
-            // Toggle menu visibility
-            mobileMenu.classList.toggle('hidden');
+            // Check if menu is closed (has max-h-0)
+            const isClosed = mobileMenu.classList.contains('max-h-0');
 
-            // Animate container shape
-            if (!mobileMenu.classList.contains('hidden')) {
+            if (isClosed) {
+                // Open menu
+                mobileMenu.classList.remove('max-h-0', 'opacity-0');
+                mobileMenu.classList.add('max-h-96', 'opacity-100');
+
+                // Adjust navbar shape to be less rounded when open to fit content
                 navbar.classList.remove('rounded-full');
-                navbar.classList.add('rounded-3xl');
+                navbar.classList.add('rounded-2xl');
+
                 // Change icon to close (X)
                 menuToggle.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>';
             } else {
+                // Close menu
+                mobileMenu.classList.remove('max-h-96', 'opacity-100');
+                mobileMenu.classList.add('max-h-0', 'opacity-0');
+
+                // Restore pill shape
+                navbar.classList.remove('rounded-2xl');
                 navbar.classList.add('rounded-full');
-                navbar.classList.remove('rounded-3xl');
+
                 // Change icon back to hamburger
                 menuToggle.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>';
             }
