@@ -91,10 +91,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Form validation
-    const contactForm = document.querySelector('form[name="contact"]');
+    const contactForms = document.querySelectorAll('form[data-netlify="true"]');
 
-    if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
+    contactForms.forEach(form => {
+        form.addEventListener('submit', function (e) {
             const name = this.querySelector('input[name="name"]');
             const message = this.querySelector('textarea[name="message"]');
 
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert('Please fill in all required fields.');
             }
         });
-    }
+    });
 
     // Active navigation link highlight
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
