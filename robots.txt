@@ -1,0 +1,5 @@
+# NAWAB GOAT FARM - robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://nawabgoatfarm.com/sitemap.xml
