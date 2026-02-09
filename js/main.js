@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
             // or we can toggle a state. The max-h-0 class is default.
 
             // Simpler: Check if max-height is set
-            const isOpen = mobileMenu.style.maxHeight === '24rem';
+            // Check if max-height is set
+            const isOpen = !mobileMenu.classList.contains('max-h-0');
 
             if (!isOpen) {
                 // Open menu

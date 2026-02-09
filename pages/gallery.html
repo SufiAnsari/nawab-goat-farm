@@ -7,17 +7,20 @@
     <meta name="description"
         content="Photo gallery of NAWAB GOAT FARM - See our goats, farm facilities, and Palai services.">
     <title>Gallery | NAWAB GOAT FARM</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Gallery | NAWAB GOAT FARM">
+    <meta property="og:description"
+        content="Photo gallery of NAWAB GOAT FARM - See our goats, farm facilities, and Palai services.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../images/logo.png">
+    <meta property="og:url" content="https://nawabgoatfarm.com/pages/gallery.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;600;700&display=swap"
         rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: { extend: { colors: { 'brand-green': '#009c4d', 'brand-dark': '#046b38', 'brand-teal': '#009ee2', 'brand-light': '#f0fdf4', 'brand-footer': '#111827' }, fontFamily: { 'heading': ['Playfair Display', 'serif'], 'body': ['Lato', 'sans-serif'] } } }
-        }
-    </script>
+
     <link rel="stylesheet" href="../css/main.css">
 </head>
 
@@ -67,7 +70,8 @@
             </div>
 
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="lg:hidden overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0">
+            <div id="mobile-menu"
+                class="lg:hidden overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0">
                 <div class="pt-4 pb-2 space-y-2 flex flex-col items-center">
                     <a href="../index.html"
                         class="w-full text-center py-2 text-gray-600 hover:text-brand-dark font-medium transition-colors">Home</a>
@@ -78,7 +82,8 @@
                     <a href="gallery.html"
                         class="w-full text-center py-2 text-gray-600 hover:text-brand-dark font-medium transition-colors">Gallery</a>
                     <a href="contact.html"
-                        class="w-full text-center py-2 text-white bg-brand-green font-bold rounded-full transition-colors hover:bg-brand-dark mx-auto block max-w-[200px]">Contact Us</a>
+                        class="w-full text-center py-2 text-white bg-brand-green font-bold rounded-full transition-colors hover:bg-brand-dark mx-auto block max-w-[200px]">Contact
+                        Us</a>
                 </div>
             </div>
         </div>
@@ -146,9 +151,50 @@
         </div>
     </section>
 
-    <footer class="bg-brand-footer text-gray-400 py-12">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p>© 2015–2026 NAWAB GOAT FARM. All rights reserved.</p>
+    <footer class="bg-brand-footer text-gray-400 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div>
+                    <img src="../images/logo.webp" alt="NAWAB GOAT FARM" class="h-16 w-auto mb-4 rounded-full">
+                    <p class="text-sm leading-relaxed">Where goats are treated with pleasure. Trusted goat farm since
+                        2015.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-heading font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="breeds.html" class="hover:text-white transition-colors">Goat Breeds</a></li>
+                        <li><a href="gallery.html" class="hover:text-white transition-colors">Gallery</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-heading font-bold text-lg mb-4">Contact Us</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-brand-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <a href="mailto:jsjunaidsaudagar5@gmail.com"
+                                class="hover:text-white transition-colors break-all">jsjunaidsaudagar5@gmail.com</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-brand-green flex-shrink-0 mt-0.5" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.885m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                            </svg>
+                            <a href="https://wa.me/919860487836" target="_blank"
+                                class="hover:text-white transition-colors">+91 98604 87836</a>
+                        </li>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-sm">
+                <p>© 2015–2026 NAWAB GOAT FARM. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
