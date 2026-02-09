@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nawabgoatfarm.com/sitemap.xml
+Sitemap: https://nawabgoatfarm.netlify.app/sitemap.xml
