@@ -157,11 +157,21 @@ document.addEventListener('DOMContentLoaded', function () {
             const encodedText = encodeURIComponent(text);
             const whatsappUrl = `https://api.whatsapp.com/send?phone=919860487836&text=${encodedText}`;
 
-            // Open in new tab
-            window.open(whatsappUrl, '_blank');
-
-            // Optional: Reset form
-            form.reset();
+            // Validate Redirect URL
+            const ALLOWED_DOMAINS = ['api.whatsapp.com'];
+            try {
+                const urlObj = new URL(whatsappUrl);
+                if (ALLOWED_DOMAINS.includes(urlObj.hostname)) {
+                    // Open in new tab
+                    window.open(whatsappUrl, '_blank');
+                    // Optional: Reset form
+                    form.reset();
+                } else {
+                    console.error('Blocked redirect to unauthorized domain:', urlObj.hostname);
+                }
+            } catch (e) {
+                console.error('Invalid URL constructed:', e);
+            }
         });
     });
 
