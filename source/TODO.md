@@ -6,38 +6,38 @@
 
 ## Setup
 
-- [ ] Create project folder structure (`/css`, `/js`, `/images`, `/pages`)
-- [ ] Initialize `index.html` with HTML5 boilerplate
-- [ ] Add Tailwind CSS via CDN
-- [ ] Create `main.css` for custom styles
-- [ ] Create `main.js` for interactivity
-- [ ] Add Google Fonts: **Playfair Display** and **Lato**
-- [ ] Define CSS custom properties for color palette:
+- [x] Create project folder structure (`/css`, `/js`, `/images`, `/pages`)
+- [x] Initialize `index.html` with HTML5 boilerplate
+- [x] Add Tailwind CSS via CDN
+- [x] Create `main.css` for custom styles
+- [x] Create `main.js` for interactivity
+- [x] Add Google Fonts: **Playfair Display** and **Lato**
+- [x] Define CSS custom properties for color palette:
   - Primary Green `#009c4d`
   - Dark Green `#046b38`
   - Teal `#009ee2`
   - Light BG `#f0fdf4`
   - Dark Footer `#111827`
-- [ ] Set up base typography styles (headings, body text)
-- [ ] Prepare placeholder images in WebP format
-- [ ] Set up folder for page HTML files (`about.html`, `breeds.html`, `gallery.html`, `contact.html`)
+- [x] Set up base typography styles (headings, body text)
+- [x] Prepare placeholder images in WebP format
+- [x] Set up folder for page HTML files (`about.html`, `breeds.html`, `gallery.html`, `contact.html`)
 
 ---
 
 ## Core Layout
 
-- [ ] Build fixed Navbar component
-  - [ ] Add logo (left)
-  - [ ] Add navigation links (Home, About, Goat Breeds, Gallery, Contact)
-  - [ ] Add "Contact Us" CTA button (right)
-  - [ ] Implement mobile hamburger menu toggle (JS)
-- [ ] Build Footer component (4-column layout)
-  - [ ] Column 1: Logo + short description
-  - [ ] Column 2: Quick links
-  - [ ] Column 3: Contact info
-  - [ ] Column 4: Social icons (WhatsApp, Facebook, YouTube)
-- [ ] Create reusable section container with consistent spacing
-- [ ] Create wave/curve section divider SVG
+- [x] Build fixed Navbar component
+  - [x] Add logo (left)
+  - [x] Add navigation links (Home, About, Goat Breeds, Gallery, Contact)
+  - [x] Add "Contact Us" CTA button (right)
+  - [x] Implement mobile hamburger menu toggle (JS)
+- [x] Build Footer component (4-column layout)
+  - [x] Column 1: Logo + short description
+  - [x] Column 2: Quick links
+  - [x] Column 3: Contact info
+  - [x] Column 4: Social icons (WhatsApp, Facebook, YouTube)
+- [x] Create reusable section container with consistent spacing
+- [x] Create wave/curve section divider SVG
 
 ---
 
@@ -45,139 +45,139 @@
 
 ### Home Page (`index.html`)
 
-- [ ] Build Hero Section
-  - [ ] Add full-screen background image
-  - [ ] Apply green-to-teal gradient overlay
-  - [ ] Add centered circular logo
-  - [ ] Add brand name: **NAWAB GOAT FARM**
-  - [ ] Add "Since 2015" badge
-  - [ ] Add tagline: *"Where goats are treated with pleasure..."*
-  - [ ] Add CTAs: "View Livestock" and "Palai Services"
-  - [ ] Add decorative wave divider at bottom
-- [ ] Build "Exclusive Breeds" Section
-  - [ ] Create section title with underline accent
-  - [ ] Build breed card component (image, name, description, badge, CTA)
-  - [ ] Display 3 breed cards in a responsive grid
-  - [ ] Add "View All Breeds" button
-- [ ] Build "Palai Services" Section
-  - [ ] Create two-column layout (text left, image right)
-  - [ ] Add feature list with check icons
-  - [ ] Add overlapping images with badge
-  - [ ] Add CTA: "Inquire About Palai Plans"
-- [ ] Build Gallery Preview Section
-  - [ ] Create masonry-style image grid
-  - [ ] Add hover zoom effect with overlay icon
-- [ ] Build Contact CTA Section
-  - [ ] Add gradient background
-  - [ ] Add heading
-  - [ ] Embed contact form (Name, Phone, Service interest, Message)
-  - [ ] Add submit button
+- [x] Build Hero Section
+  - [x] Add full-screen background image
+  - [x] Apply green-to-teal gradient overlay
+  - [x] Add centered circular logo
+  - [x] Add brand name: **NAWAB GOAT FARM**
+  - [x] Add "Since 2015" badge
+  - [x] Add tagline: *"Where goats are treated with pleasure..."*
+  - [x] Add CTAs: "View Livestock" and "Palai Services"
+  - [x] Add decorative wave divider at bottom
+- [x] Build "Exclusive Breeds" Section
+  - [x] Create section title with underline accent
+  - [x] Build breed card component (image, name, description, badge, CTA)
+  - [x] Display 3 breed cards in a responsive grid
+  - [x] Add "View All Breeds" button
+- [x] Build "Palai Services" Section
+  - [x] Create two-column layout (text left, image right)
+  - [x] Add feature list with check icons
+  - [x] Add overlapping images with badge
+  - [x] Add CTA: "Inquire About Palai Plans"
+- [x] Build Gallery Preview Section
+  - [x] Create masonry-style image grid
+  - [x] Add hover zoom effect with overlay icon
+- [x] Build Contact CTA Section
+  - [x] Add gradient background
+  - [x] Add heading
+  - [x] Embed contact form (Name, Phone, Service interest, Message)
+  - [x] Add submit button
 
 ---
 
 ### About Page (`about.html`)
 
-- [ ] Create page header with title
-- [ ] Add farm introduction paragraph
-- [ ] Add mission & values section
-- [ ] Add ethical care philosophy section
-- [ ] Add "Since 2015" experience highlight
-- [ ] Add supporting images
+- [x] Create page header with title
+- [x] Add farm introduction paragraph
+- [x] Add mission & values section
+- [x] Add ethical care philosophy section
+- [x] Add "Since 2015" experience highlight
+- [x] Add supporting images
 
 ---
 
 ### Goat Breeds Page (`breeds.html`)
 
-- [ ] Create page header with title
-- [ ] Build breed card grid (responsive: 3 cols → 2 cols → 1 col)
-- [ ] Populate breed cards with sample data:
-  - [ ] Breed 1: Image, name, description
-  - [ ] Breed 2: Image, name, description
-  - [ ] Breed 3: Image, name, description
-  - [ ] (Add more as needed)
-- [ ] Add optional visual category labels (no filter functionality)
+- [x] Create page header with title
+- [x] Build breed card grid (responsive: 3 cols → 2 cols → 1 col)
+- [x] Populate breed cards with sample data:
+  - [x] Breed 1: Image, name, description
+  - [x] Breed 2: Image, name, description
+  - [x] Breed 3: Image, name, description
+  - [x] (Add more as needed)
+- [x] Add optional visual category labels (no filter functionality)
 
 ---
 
 ### Gallery Page (`gallery.html`)
 
-- [ ] Create page header with title
-- [ ] Build full-width responsive image grid (3 cols → 2 cols)
-- [ ] Add lightbox interaction (optional, JS-based)
-- [ ] Enable hover effect on images
-- [ ] Add lazy loading to all images
+- [x] Create page header with title
+- [x] Build full-width responsive image grid (3 cols → 2 cols)
+- [x] Add lightbox interaction (optional, JS-based)
+- [x] Enable hover effect on images
+- [x] Add lazy loading to all images
 
 ---
 
 ### Contact Page (`contact.html`)
 
-- [ ] Create page header with title
-- [ ] Build contact form (Netlify Forms / Formspree ready)
-  - [ ] Name input (required)
-  - [ ] Phone input (optional)
-  - [ ] Email input (required)
-  - [ ] Message textarea (required)
-  - [ ] Submit button
-- [ ] Add basic form validation (JS)
-- [ ] Display WhatsApp quick-contact button
-- [ ] Display email address
-- [ ] Display Facebook page link
-- [ ] Add optional location text
+- [x] Create page header with title
+- [x] Build contact form (Netlify Forms / Formspree ready)
+  - [x] Name input (required)
+  - [x] Phone input (optional)
+  - [x] Email input (required)
+  - [x] Message textarea (required)
+  - [x] Submit button
+- [x] Add basic form validation (JS)
+- [x] Display WhatsApp quick-contact button
+- [x] Display email address
+- [x] Display Facebook page link
+- [x] Add optional location text
 
 ---
 
 ### Global Components
 
-- [ ] Create floating WhatsApp button
-  - [ ] Fixed position (bottom-right)
-  - [ ] Opens chat with predefined message
-  - [ ] Mobile and desktop compatible
-- [ ] Create floating social icons strip (WhatsApp, Facebook, YouTube, Email)
-- [ ] Add YouTube video embed component (responsive)
+- [x] Create floating WhatsApp button
+  - [x] Fixed position (bottom-right)
+  - [x] Opens chat with predefined message
+  - [x] Mobile and desktop compatible
+- [x] Create floating social icons strip (WhatsApp, Facebook, YouTube, Email)
+- [x] Add YouTube video embed component (responsive)
 
 ---
 
 ## SEO
 
-- [ ] Add unique `<title>` tag per page
-- [ ] Add unique `<meta name="description">` per page
-- [ ] Ensure proper heading hierarchy (`h1` → `h2` → `h3`)
-- [ ] Add `alt` attributes to all images
-- [ ] Use clean, readable URLs (no query params)
-- [ ] Create `robots.txt`
-- [ ] Create `sitemap.xml`
-- [ ] Add Open Graph meta tags (og:title, og:description, og:image)
-- [ ] Add JSON-LD structured data (LocalBusiness + Farm schema)
+- [x] Add unique `<title>` tag per page
+- [x] Add unique `<meta name="description">` per page
+- [x] Ensure proper heading hierarchy (`h1` → `h2` → `h3`)
+- [x] Add `alt` attributes to all images
+- [x] Use clean, readable URLs (no query params)
+- [x] Create `robots.txt`
+- [x] Create `sitemap.xml`
+- [x] Add Open Graph meta tags (og:title, og:description, og:image)
+- [x] Add JSON-LD structured data (LocalBusiness + Farm schema)
 
 ---
 
 ## Polish
 
-- [ ] Optimize all images (compress, convert to WebP)
-- [ ] Add `loading="lazy"` to all images
-- [ ] Test and fix responsive breakpoints (mobile, tablet, desktop)
-- [ ] Ensure tap targets ≥ 44px on mobile
-- [ ] Verify high contrast for text over images
-- [ ] Add minimal CSS transitions/hover effects
-- [ ] Remove unused CSS/JS
-- [ ] Cross-browser testing (Chrome, Firefox, Edge, Safari)
-- [ ] Test on low-bandwidth connection
-- [ ] Validate HTML (W3C Validator)
-- [ ] Validate CSS
+- [x] Optimize all images (compress, convert to WebP)
+- [x] Add `loading="lazy"` to all images
+- [x] Test and fix responsive breakpoints (mobile, tablet, desktop)
+- [x] Ensure tap targets ≥ 44px on mobile
+- [x] Verify high contrast for text over images
+- [x] Add minimal CSS transitions/hover effects
+- [x] Remove unused CSS/JS
+- [x] Cross-browser testing (Chrome, Firefox, Edge, Safari)
+- [x] Test on low-bandwidth connection
+- [x] Validate HTML (W3C Validator)
+- [x] Validate CSS
 
 ---
 
 ## Deployment
 
-- [ ] Create Netlify account (if not exists)
-- [ ] Configure Netlify Forms (or Formspree) for contact form
-- [ ] Deploy site to Netlify (drag-and-drop or Git)
-- [ ] Set up custom domain (optional)
-- [ ] Enable HTTPS (automatic on Netlify)
-- [ ] Test live website on mobile and desktop
-- [ ] Verify form submissions work
-- [ ] Verify social links open correctly
-- [ ] Submit sitemap to Google Search Console
+- [x] Create Netlify account (if not exists)
+- [x] Configure Netlify Forms (or Formspree) for contact form
+- [x] Deploy site to Netlify (drag-and-drop or Git)
+- [x] Set up custom domain (optional)
+- [x] Enable HTTPS (automatic on Netlify)
+- [x] Test live website on mobile and desktop
+- [x] Verify form submissions work
+- [x] Verify social links open correctly
+- [x] Submit sitemap to Google Search Console
 
 ---
 
