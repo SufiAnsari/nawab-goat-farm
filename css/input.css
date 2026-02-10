@@ -4,9 +4,9 @@
 @source "../js/**/*.js";
 
 @theme {
-    --color-brand-green: #009c4d;
+    --color-brand-green: #007a3e;
     --color-brand-dark: #046b38;
-    --color-brand-teal: #009ee2;
+    --color-brand-teal: #0077b6;
     --color-brand-light: #f0fdf4;
     --color-brand-footer: #111827;
 
@@ -18,9 +18,9 @@
 
 /* CSS Custom Properties */
 :root {
-    --color-brand-green: #009c4d;
+    --color-brand-green: #007a3e;
     --color-brand-dark: #046b38;
-    --color-brand-teal: #009ee2;
+    --color-brand-teal: #0077b6;
     --color-brand-light: #f0fdf4;
     --color-brand-footer: #111827;
 }

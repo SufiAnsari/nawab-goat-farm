@@ -153,6 +153,7 @@
 - [x] **Optimize LCP (Preload Hero, Prioritize Logo)**
 - [x] **Fix CLS (Add Width/Height Attributes)**
 - [x] **Configure Netlify Caching Headers**
+- [x] **Fix Accessibility Issues (Contrast, Labels, Titles, Alt Text)**
 - [x] Test and fix responsive breakpoints (mobile, tablet, desktop)
 - [x] Ensure tap targets ≥ 44px on mobile
 - [x] Verify high contrast for text over images
