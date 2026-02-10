@@ -50,15 +50,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Navbar scroll effect
-    // navbar variable already declared above
-
+    let isScrolling = false;
     window.addEventListener('scroll', function () {
-        if (window.scrollY > 50) {
-            navbar.classList.add('shadow-md');
-            navbar.classList.remove('shadow-sm');
-        } else {
-            navbar.classList.remove('shadow-md');
-            navbar.classList.add('shadow-sm');
+        if (!isScrolling) {
+            window.requestAnimationFrame(function () {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('shadow-md');
+                    navbar.classList.remove('shadow-sm');
+                } else {
+                    navbar.classList.remove('shadow-md');
+                    navbar.classList.add('shadow-sm');
+                }
+                isScrolling = false;
+            });
+            isScrolling = true;
         }
     });
 
@@ -88,28 +93,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Lazy loading for images (fallback for browsers without native support)
-    if ('loading' in HTMLImageElement.prototype) {
-        const images = document.querySelectorAll('img[loading="lazy"]');
-        images.forEach(img => {
-            img.src = img.src;
-        });
-    } else {
-        // Fallback for older browsers
-        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src || img.src;
-                    observer.unobserve(img);
-                }
-            });
-        });
-
-        lazyImages.forEach(img => imageObserver.observe(img));
-    }
+    // Native Lazy Loading is now handled by HTML attributes loading="lazy"
+    // We can remove the redundant JS fallback to reduce bundle size and execution time.
 
     // Form validation and WhatsApp Redirection
     const contactForms = document.querySelectorAll('form[data-netlify="true"]');

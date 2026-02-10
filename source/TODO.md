@@ -144,17 +144,15 @@
 - [x] Ensure proper heading hierarchy (`h1` → `h2` → `h3`)
 - [x] Add `alt` attributes to all images
 - [x] Use clean, readable URLs (no query params)
-- [x] Create `robots.txt`
-- [x] Create `sitemap.xml`
-- [x] Add Open Graph meta tags (og:title, og:description, og:image)
 - [x] Add JSON-LD structured data (LocalBusiness + Farm schema)
-
----
-
-## Polish
-
-- [x] Optimize all images (compress, convert to WebP)
-- [x] Add `loading="lazy"` to all images
+- [x] **Add valid `sitemap.xml`**
+- [x] **Configure `robots.txt`**
+- [x] **Add Meta Tags for Social Media (Open Graph)**
+- [x] **Ensure all images are compressed (WebP)**
+- [x] **Add `loading="lazy"` to off-screen images**
+- [x] **Optimize LCP (Preload Hero, Prioritize Logo)**
+- [x] **Fix CLS (Add Width/Height Attributes)**
+- [x] **Configure Netlify Caching Headers**
 - [x] Test and fix responsive breakpoints (mobile, tablet, desktop)
 - [x] Ensure tap targets ≥ 44px on mobile
 - [x] Verify high contrast for text over images
