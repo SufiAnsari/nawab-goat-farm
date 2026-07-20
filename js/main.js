@@ -1,65 +1,49 @@
-// NAWAB GOAT FARM - Main JavaScript
+// NAWAB GOAT FARM - High Performance Interactivity & Conversion Logic
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    // Mobile Menu Toggle
-    // Mobile Menu Toggle (Mini Navbar)
+    // 1. Mobile Menu Toggle
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const navbar = document.getElementById('navbar');
 
     if (menuToggle && mobileMenu && navbar) {
         menuToggle.addEventListener('click', function () {
-            // Check if menu is closed (based on computed style or inline style)
-            // We rely on the presence of inline max-height to determine if it's open, 
-            // or we can toggle a state. The max-h-0 class is default.
-
-            // Simpler: Check if max-height is set
-            // Check if max-height is set
             const isOpen = !mobileMenu.classList.contains('max-h-0');
 
             if (!isOpen) {
                 // Open menu
                 mobileMenu.classList.remove('max-h-0', 'opacity-0');
-                // Use scrollHeight for auto-adjusting height
                 mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
                 mobileMenu.style.opacity = '1';
 
-                // Adjust navbar shape
-                navbar.classList.remove('rounded-full');
-                // Use inline style
-                navbar.style.borderRadius = '1rem'; // rounded-2xl is 1rem
-
-                // Change icon to close (X)
-                menuToggle.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>';
+                navbar.style.borderRadius = '1.25rem';
+                menuToggle.setAttribute('aria-expanded', 'true');
+                menuToggle.innerHTML = '<svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>';
             } else {
                 // Close menu
-                // Return to class-based defaults
                 mobileMenu.style.maxHeight = null;
                 mobileMenu.style.opacity = null;
                 mobileMenu.classList.add('max-h-0', 'opacity-0');
 
-                // Restore pill shape
                 navbar.style.borderRadius = null;
-                navbar.classList.add('rounded-full');
-
-                // Change icon back to hamburger
-                menuToggle.innerHTML = '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>';
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.innerHTML = '<svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>';
             }
         });
     }
 
-    // Navbar scroll effect
+    // 2. Navbar scroll effect
     let isScrolling = false;
     window.addEventListener('scroll', function () {
         if (!isScrolling) {
             window.requestAnimationFrame(function () {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('shadow-md');
-                    navbar.classList.remove('shadow-sm');
+                if (window.scrollY > 40) {
+                    navbar.classList.add('shadow-xl', 'bg-white');
+                    navbar.classList.remove('bg-white/95');
                 } else {
-                    navbar.classList.remove('shadow-md');
-                    navbar.classList.add('shadow-sm');
+                    navbar.classList.remove('shadow-xl', 'bg-white');
+                    navbar.classList.add('bg-white/95');
                 }
                 isScrolling = false;
             });
@@ -67,45 +51,50 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const targetId = this.getAttribute('href');
-            if (targetId !== '#') {
-                e.preventDefault();
-                const target = document.querySelector(targetId);
-                if (target) {
-                    const navHeight = navbar.offsetHeight;
-                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+    // 3. Preset Chips Interactivity (Home & Contact pages)
+    const chipButtons = document.querySelectorAll('#preset-chips .chip-option');
+    const serviceSelect = document.getElementById('form-service');
+    const messageTextarea = document.getElementById('form-message');
 
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-
-                    // Close mobile menu if open
-                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
-                        mobileMenu.classList.remove('show');
-                    }
-                }
+    if (chipButtons.length > 0) {
+        const presets = {
+            'palai': {
+                serviceVal: 'palai',
+                msgText: 'Hi Nawab Goat Farm, I am interested in Palai Boarding services for my goats. Please share pricing and details.'
+            },
+            'buy-goat': {
+                serviceVal: 'buy-goat',
+                msgText: 'Hi Nawab Goat Farm, I want to purchase pure breed goats (Sirohi/Beetal/Osmanabadi). Please share current availability.'
+            },
+            'visit': {
+                serviceVal: 'visit',
+                msgText: 'Hi Nawab Goat Farm, I would like to schedule a visit to your farm. Please share timing and location details.'
             }
+        };
+
+        chipButtons.forEach(chip => {
+            chip.addEventListener('click', function () {
+                chipButtons.forEach(c => c.classList.remove('selected'));
+                this.classList.add('selected');
+
+                const serviceType = this.getAttribute('data-service');
+                if (presets[serviceType]) {
+                    if (serviceSelect) serviceSelect.value = presets[serviceType].serviceVal;
+                    if (messageTextarea) messageTextarea.value = presets[serviceType].msgText;
+                }
+            });
         });
-    });
+    }
 
-    // Native Lazy Loading is now handled by HTML attributes loading="lazy"
-    // We can remove the redundant JS fallback to reduce bundle size and execution time.
-
-    // Form validation and WhatsApp Redirection
+    // 4. Form validation and WhatsApp Redirection
     const contactForms = document.querySelectorAll('form[data-netlify="true"]');
 
     contactForms.forEach(form => {
         form.addEventListener('submit', function (e) {
-            e.preventDefault(); // Prevent default Netlify submission to open WhatsApp
+            e.preventDefault();
 
             const nameInput = this.querySelector('input[name="name"]');
-            const phoneInput = this.querySelector('input[name="phone"]'); // Might be null in contact.html? No, it has phone input.
-            const emailInput = this.querySelector('input[name="email"]');
+            const phoneInput = this.querySelector('input[name="phone"]');
             const serviceInput = this.querySelector('select[name="service"]');
             const messageInput = this.querySelector('textarea[name="message"]');
 
@@ -116,6 +105,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 nameInput.classList.add('border-red-500');
             } else if (nameInput) {
                 nameInput.classList.remove('border-red-500');
+            }
+
+            if (phoneInput && phoneInput.value.trim() === '') {
+                isValid = false;
+                phoneInput.classList.add('border-red-500');
+            } else if (phoneInput) {
+                phoneInput.classList.remove('border-red-500');
             }
 
             if (messageInput && messageInput.value.trim() === '') {
@@ -130,53 +126,21 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            // Construct WhatsApp Message
-            let text = `*New Inquiry from Website*\n\n`;
-            text += `*Name:* ${nameInput.value}\n`;
-            if (phoneInput && phoneInput.value) text += `*Phone:* ${phoneInput.value}\n`;
-            if (emailInput && emailInput.value) text += `*Email:* ${emailInput.value}\n`;
-            if (serviceInput && serviceInput.value) text += `*Service Interest:* ${serviceInput.options[serviceInput.selectedIndex].text}\n`;
-            text += `*Message:* ${messageInput.value}`;
+            let text = `*New Inquiry from Nawab Goat Farm Website*\n\n`;
+            text += `👤 *Name:* ${nameInput.value}\n`;
+            if (phoneInput && phoneInput.value) text += `📞 *Phone:* ${phoneInput.value}\n`;
+            if (serviceInput && serviceInput.value) {
+                const serviceLabel = serviceInput.options[serviceInput.selectedIndex] ? serviceInput.options[serviceInput.selectedIndex].text : serviceInput.value;
+                text += `🏷️ *Interest:* ${serviceLabel}\n`;
+            }
+            text += `💬 *Message:* ${messageInput.value}`;
 
-            // Encode for URL
             const encodedText = encodeURIComponent(text);
             const whatsappUrl = `https://api.whatsapp.com/send?phone=919860487836&text=${encodedText}`;
 
-            // Validate Redirect URL
-            const ALLOWED_DOMAINS = ['api.whatsapp.com'];
-            try {
-                const urlObj = new URL(whatsappUrl);
-                if (ALLOWED_DOMAINS.includes(urlObj.hostname)) {
-                    // Open in new tab
-                    window.open(whatsappUrl, '_blank');
-                    // Optional: Reset form
-                    form.reset();
-                } else {
-                    console.error('Blocked redirect to unauthorized domain:', urlObj.hostname);
-                }
-            } catch (e) {
-                console.error('Invalid URL constructed:', e);
-            }
+            window.open(whatsappUrl, '_blank');
+            form.reset();
         });
-    });
-
-    // Active navigation link highlight
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('.nav-link, #mobile-menu a');
-
-
-
-    navLinks.forEach(link => {
-        const linkPage = link.getAttribute('href').split('/').pop();
-        if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
-            // Updated style for pill navbar active state
-            if (link.classList.contains('nav-link')) {
-                link.classList.add('bg-white', 'text-brand-dark', 'font-bold', 'shadow-sm');
-            } else {
-                // Mobile menu active state
-                link.classList.add('text-brand-green');
-            }
-        }
     });
 
 });

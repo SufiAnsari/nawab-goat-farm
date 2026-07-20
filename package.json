@@ -1,11 +1,14 @@
 {
   "name": "ngf",
   "version": "1.0.0",
-  "description": "",
+  "description": "NAWAB GOAT FARM - Premium Goat Breeds & Palai Services",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build:css": "postcss ./css/input.css -o ./css/main.css"
+    "dev": "npx -y serve .",
+    "start": "npx -y serve .",
+    "build": "postcss ./css/input.css -o ./css/main.css",
+    "build:css": "postcss ./css/input.css -o ./css/main.css",
+    "watch:css": "postcss ./css/input.css -o ./css/main.css --watch"
   },
   "repository": {
     "type": "git",

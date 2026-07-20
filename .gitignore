@@ -1,2 +1,5 @@
 node_modules/
-css/main.css
+.agents/
+claude-seo/
+skills-lock.json
+.DS_Store
