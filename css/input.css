@@ -431,3 +431,186 @@ input:focus, select:focus, textarea:focus {
 .pulse-whatsapp {
     animation: pulseGlow 2.5s infinite;
 }
+
+/* ==========================================================================
+   NAWAB GOAT FARM - Unified UI Animation System
+   ========================================================================== */
+
+/* Keyframe Definitions */
+@keyframes slideFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideLeftToRight {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes popUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  70% {
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.anim-on-scroll {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.anim-slide-top {
+  animation: slideFromTop 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-on-scroll.anim-float-up.animated,
+.anim-float-up:not(.anim-on-scroll) {
+  animation: floatUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-on-scroll.anim-scale-in.animated,
+.anim-scale-in:not(.anim-on-scroll) {
+  animation: scaleIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-on-scroll.anim-slide-up.animated,
+.anim-slide-up:not(.anim-on-scroll) {
+  animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-on-scroll.anim-zoom-in.animated,
+.anim-zoom-in:not(.anim-on-scroll) {
+  animation: zoomIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-on-scroll.anim-slide-left.animated,
+.anim-slide-left:not(.anim-on-scroll) {
+  animation: slideLeftToRight 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-on-scroll.anim-pop-up.animated,
+.anim-pop-up:not(.anim-on-scroll) {
+  animation: popUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-on-scroll.anim-reveal.animated,
+.anim-reveal:not(.anim-on-scroll) {
+  animation: revealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.anim-on-scroll.anim-fade-in.animated,
+.anim-fade-in:not(.anim-on-scroll) {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* Reduced Motion Override for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .anim-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+  .anim-slide-top,
+  .anim-float-up,
+  .anim-scale-in,
+  .anim-slide-up,
+  .anim-zoom-in,
+  .anim-slide-left,
+  .anim-pop-up,
+  .anim-reveal,
+  .anim-fade-in {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

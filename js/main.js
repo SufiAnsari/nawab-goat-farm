@@ -138,9 +138,46 @@ document.addEventListener('DOMContentLoaded', function () {
             const encodedText = encodeURIComponent(text);
             const whatsappUrl = `https://api.whatsapp.com/send?phone=919860487836&text=${encodedText}`;
 
-            window.open(whatsappUrl, '_blank');
+            // Post form data asynchronously to Netlify Forms endpoint
+            try {
+                const formData = new FormData(form);
+                fetch(form.getAttribute('action') || '/', {
+                    method: 'POST',
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: new URLSearchParams(formData).toString()
+                }).catch(() => {});
+            } catch (err) {}
+
+            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
             form.reset();
         });
     });
 
+    // 5. Scroll Animation Intersection Observer
+    const animElements = document.querySelectorAll('.anim-on-scroll');
+    if (animElements.length > 0) {
+        if ('IntersectionObserver' in window) {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -50px 0px',
+                threshold: 0.15
+            };
+
+            const animObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            animElements.forEach(el => animObserver.observe(el));
+        } else {
+            // Fallback for legacy browsers without IntersectionObserver support
+            animElements.forEach(el => el.classList.add('animated'));
+        }
+    }
+
 });
+
